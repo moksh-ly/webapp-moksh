@@ -1,6 +1,11 @@
 services:
   - type: web
-    name: flask-app
+    name: flask-old-version
     runtime: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn flask2.py
+    buildCommand: ""
+    startCommand: gunicorn app:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+    region: oregon
+
