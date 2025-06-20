@@ -1,11 +1,13 @@
 services:
   - type: web
-    name: flask-old-version
-    runtime: python
+    name: moksh-flask-app
+    env: python
+    plan: free
     buildCommand: ""
     startCommand: gunicorn flask2:app
+    region: oregon  # or change to your preferred region
     envVars:
       - key: FLASK_ENV
         value: production
-    region: oregon
+
 
