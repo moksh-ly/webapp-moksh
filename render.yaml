@@ -3,7 +3,7 @@ services:
     name: flask-old-version
     runtime: python
     buildCommand: ""
-    startCommand: gunicorn flask2:,py
+    startCommand: gunicorn flask2:app
     envVars:
       - key: FLASK_ENV
         value: production
