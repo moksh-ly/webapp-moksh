@@ -2,10 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Calculator</title>
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background-color: #f2f4f8;
+    }
+    h1 {
+      color: #333;
+    }
+    form {
+      margin-top: 20px;
+    }
+    input, select, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #2563eb;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1d4ed8;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 20px;
+      color: green;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello from Calculator Page!</h1>
+  <h1>🧮 Simple Calculator</h1>
+  
+  <form method="POST">
+    <input type="number" name="num1" placeholder="Enter first number" required>
+    <input type="number" name="num2" placeholder="Enter second number" required>
+
+    <select name="operation">
+      <option value="add">➕ Add</option>
+      <option value="subtract">➖ Subtract</option>
+      <option value="multiply">✖️ Multiply</option>
+      <option value="divide">➗ Divide</option>
+    </select>
+
+    <button type="submit">Calculate</button>
+  </form>
+
+  {% if result is not none %}
+    <div class="result">
+      <strong>Result: {{ result }}</strong>
+    </div>
+  {% endif %}
 </body>
 </html>
+
 
